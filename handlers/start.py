@@ -4,15 +4,15 @@ from aiogram.filters import Command
 from aiogram.types import BotCommand, Message, CallbackQuery
 from keyboards.start import kb_start, kb_start_anime, kb_start_back_1, kb_start_back_2,\
       kb_start_end, kb_start_error, kb_start_next_history
-
+from tokens import bot
 
 
 router = Router()
 
 @router.message(Command("start"))
 async def start_handler(msg: Message):
-    """Команды бота"""
-    from main import bot
+    """Ипморт бота"""
+    
     await bot.set_my_commands([
         BotCommand(command='start', description='Запуск бота'),
         BotCommand(command='help', description='Справка'),
